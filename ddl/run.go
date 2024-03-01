@@ -174,6 +174,10 @@ func dmlIgnoreError(err error) bool {
 	if strings.Contains(errStr, "index out of range") {
 		return true
 	}
+	if strings.Contains(errStr, "UnionExec chunk column count mismatch") {
+		return true
+
+	}
 	return false
 }
 
