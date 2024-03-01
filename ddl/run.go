@@ -171,6 +171,9 @@ func dmlIgnoreError(err error) bool {
 	if !RCIsolation && strings.Contains(errStr, "public column") {
 		return true
 	}
+	if strings.Contains(errStr, "index out of range") {
+		return true
+	}
 	return false
 }
 
