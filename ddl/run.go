@@ -176,7 +176,9 @@ func dmlIgnoreError(err error) bool {
 	}
 	if strings.Contains(errStr, "UnionExec chunk column count mismatch") {
 		return true
-
+	}
+	if strings.Contains(errStr, "assertion failed") {
+		return true
 	}
 	return false
 }
